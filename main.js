@@ -136,8 +136,8 @@ const formaPago = (subtotalEnvio) => {
                 break;
             case 2:
                 interes = 0.1
+                costoInteres = subtotalEnvio*interes
                 alert("1 Pago - 10% Interes: $"+(subtotalEnvio*interes)+".")
-                costoInteres = subtotalEnvio*interes + subtotalEnvio
                 break;
             case 3:
                 do {
@@ -177,7 +177,8 @@ const calCuotas = (optCuotas, interes) => {
 }
 
 const msjCompra = (subtotal, subtotalInteres, subtotalEnvio,) => {
-    let comprar = confirm("Información final del pedido:\n\t - Costo de los productos: $"+subtotal+"\n\t - Envío: $"+(subtotalEnvio-subtotal)+".\nIntereses: $"+(subtotalInteres-subtotalEnvio)+".\nTotal Final: $"+subtotalInteres+".\n¿Desea completar esta compra?")
+    let interes = subtotalInteres - subtotalEnvio
+    let comprar = confirm("Información final del pedido:\n\t - Costo de los productos: $"+subtotal+"\n\t - Envío: $"+(subtotalEnvio - subtotal)+".\nIntereses: $"+interes+".\nTotal Final: $"+subtotalInteres+".\n¿Desea completar esta compra?")
     if (comprar = false)
         alert("Compra cancelada.")
     else
