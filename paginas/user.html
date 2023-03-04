@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CyberTech</title>
-    <link rel="shortcut icon" href="./iconos/kisspng-advertising-slogan-logo-cyberpunk-2077-logo-5b45d3732927f0.0425947715313027711686.ico">
-    <link rel="stylesheet" href="./SASS/main.css">
-    <link rel="stylesheet" href="./style/iconos-fontawesome/css/all.min.css">
+    <title>CyberTech | Usuario</title>
+    <link rel="shortcut icon" href="../iconos/kisspng-advertising-slogan-logo-cyberpunk-2077-logo-5b45d3732927f0.0425947715313027711686.ico">
+    <link rel="stylesheet" href="../SASS/main.css">
+    <link rel="stylesheet" href="../style/iconos-fontawesome/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -21,22 +21,21 @@
     <meta name="keywords" content="gamer, tecnologia, pc, computadora, diseño">
     <meta name="description" content="Ofrecemos componentes tecnologicos al mejor precio del mercado.">
 </head>
-<body class="body-index">
+<body class="body_user">
     <!-- Header -->
     <header class="header">
         <div class="header-1">
-            <h1><a href="./index.html" target="_self" id="header-logo">CyberTech</a></h1>
+            <h1><a href="../index.html" target="_self" id="header-logo">CyberTech</a></h1>
             <input type="text" placeholder="Buscar producto" class="header__search">
             <div class="header__logos">
                 <button class="header__user">
-                    <a href="./paginas/user.html">
-                        <span><i class="header__user fa-solid fa-user"></i></span>
-                        <span class="user-text">Marcos Caceres</span>
-                    </a>
+                    <span><i class="header__user fa-solid fa-user"></i></span>
+                    <span class="user-text">Usuario</span>
                 </button>
                 <button class="header__cart">
-                    <span><i class="fa-solid fa-cart-shopping"><span class="cantidad-carrito"></span></i></span>
+                    <span><i class="fa-solid fa-cart-shopping"></i></span>
                     <span class="cart-text">Carrito</span>
+                    <span class="cantidad-carrito"></span>
                 </button>
             </div>
         </div>
@@ -46,10 +45,10 @@
                 <i class="fas fa-bars"></i>
             </label>
             <ul>
-                <li class="header-menu__item"><a href="./paginas/arma-pc.html">Armá tu pc</a></li>
-                <li class="header-menu__item"><a href="./paginas/productos.html">Productos</a></li>
-                <li class="header-menu__item"><a href="./paginas/contacto.html">Contactanos</a></li>
-                <li class="header-menu__item"><a href="./paginas/ayuda.html">Ayuda</a></li>
+                <li class="header-menu__item"><a href="./arma-pc.html">Armá tu pc</a></li>
+                <li class="header-menu__item"><a href="./productos.html">Productos</a></li>
+                <li class="header-menu__item"><a href="./contacto.html">Contactanos</a></li>
+                <li class="header-menu__item"><a href="./ayuda.html">Ayuda</a></li>
             </ul>
         </nav>
     </header>
@@ -175,77 +174,40 @@
             </div>
         </div>
     </div>
-    <main class="main">
-        <!-- Slider de imágenes -->
-        <div class="slider">
-            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                  <button  type="button " data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                  <button  type="button " data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                  <button  type="button " data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div>
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="./imagenes/img-ej5.jpg" class="d-block w-100" alt="evga">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="./imagenes/img-ej6.jpg" class="d-block w-100" alt="motherboard">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="./imagenes/img-ej7.jpg" class="d-block w-100" alt="intel">
-                  </div>
-                </div>
-                <button  class="carousel-control-prev" type="button " data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button  class="carousel-control-next" type="button " data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-              </div>
-        </div>
-        <!-- Tabla de marcas -->
-        <section class="marcas" data-aos="fade-up" data-aos-offset="120">
-            <h2 class="marcas__title">Marcas</h2>
-            <div class="marcas-flex">
-                <img src="./imagenes/nvidia.png" alt="img-nvidia_ej" class="marcas-flex__img" data-aos="fade-up" data-aos-offset="170">
-                <img src="./imagenes/amd.png" alt="img-amd_ej1" class="marcas-flex__img" data-aos="fade-up" data-aos-offset="170">
-                <img src="./imagenes/nvidia.png" alt="img-nvidia_ej" class="marcas-flex__img" data-aos="fade-up" data-aos-offset="170">
-                <img src="./imagenes/amd.png" alt="img-amd_ej1" class="marcas-flex__img" data-aos="fade-up" data-aos-offset="170">
-                <img src="./imagenes/nvidia.png" alt="img-nvidia_ej" class="marcas-flex__img" data-aos="fade-up" data-aos-offset="170">
-                <img src="./imagenes/amd.png" alt="img-amd_ej1" class="marcas-flex__img" data-aos="fade-up" data-aos-offset="170">
-                <img src="./imagenes/nvidia.png" alt="img-nvidia_ej" class="marcas-flex__img" data-aos="fade-up" data-aos-offset="170">
-                <img src="./imagenes/amd.png" alt="img-amd_ej1" class="marcas-flex__img" data-aos="fade-up" data-aos-offset="170">
-            </div>
-        </section>
-        <!-- Lista de novedades -->
-        <div class="novedades" data-aos="fade-up" data-aos-offset="150">
-            <h2 class="nov__title">Novedades</h2>
-            <div class="container">
-                <div class="row row-cols-1 row-cols-md-3 row-cols-xl-6 productos nov">
-                </div>
+    <main class="main user">
+        <div class="usuario">
+            <div class="container pedidos">
+            <h2>Pedidos:</h2>
+            <div class="listaPedidos">
             </div>
         </div>
+        <div class="infoEnvio">
+            <h2>Usuario: Marcos Cáceres</h2>
+            <h2>Información de envío predeterminada:</h2>
+            <p>País: Argentina</p>
+            <p>Buenos Aires, General Paz 1335</p>
+            <p>Piso 4, puerta 24</p>
+        </div>
+    </div>
     </main>
-    <!-- Footer -->
+<!-- Footer -->
     <footer class="footer navbar navbar-fixed-bottom">
         <nav class="footer-menu">
             <ul class="foot-bl1">
-                <li class="footer-menu__item "><a href="./paginas/ayuda.html">Formas de pago</a></li>
-                <li class="footer-menu__item"><a href="./paginas/ayuda.html">Políticas y garantía</a></li>
-                <li class="footer-menu__item"><a href="./paginas/ayuda.html">Financiación</a></li>
-                <li class="footer-menu__item"><a href="./paginas/ayuda.html">Envíos</a></li>
-                <li class="footer-menu__item"><a href="./paginas/ayuda.html">Servicio al cliente</a></li>
-                <li class="footer-menu__item"><a href="./paginas/ayuda.html">Nosotros</a></li>
+                <li class="footer-menu__item "><a href="./ayuda.html" target="_self">Formas de pago</a></li>
+                <li class="footer-menu__item"><a href="./ayuda.html" target="_self">Políticas y garantía</a></li>
+                <li class="footer-menu__item"><a href="./ayuda.html" target="_self">Financiación</a></li>
+                <li class="footer-menu__item"><a href="./ayuda.html" target="_self">Envíos</a></li>
+                <li class="footer-menu__item"><a href="./ayuda.html" target="_self">Servicio al cliente</a></li>
+                <li class="footer-menu__item"><a href="./ayuda.html" target="_self">Nosotros</a></li>
             </ul>
             <ul class="foot-bl2">
                 <li class="footer-menu__item wsp"><i class="fa-brands fa-whatsapp"></i> Whatsapp: (+54) 11 1234 5678</li>
                 <li class="footer-menu__item"><a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
                 <li class="footer-menu__item"><a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-square-facebook"></i> Facebook</a></li>
                 <li class="footer-menu__item"><a href="https://www.youtube.com" target="_blank"><i class="fa-brands fa-youtube"></i> Youtube</a></li>
-                <li class="footer-menu__item"><a href="./paginas/ayuda.html">¿Cómo comprar?</a></li>
-                <li class="footer-menu__item"><a href="./paginas/ayuda.html">Preguntas frecuentes</a></li>
+                <li class="footer-menu__item"><a href="./ayuda.html" target="_self">¿Cómo comprar?</a></li>
+                <li class="footer-menu__item"><a href="./ayuda.html" target="_self">Preguntas frecuentes</a></li>
             </ul>
             <ul class="foot-bl3">
                 <li class="footer-menu__item"><a href="https://www.google.com.ar/maps" target="_blank">CABA Calle 1234</a></li>
@@ -254,10 +216,10 @@
         </nav>
     </footer>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="JS/animatedModal.min.js"></script>
+    <script src="../JS/animatedModal.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="./JS/Stock.js"></script>
-    <script src="./JS/main.js"></script>
+    <script src="../JS/Stock.js"></script>
+    <script src="../JS/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script> 
     <script>
         AOS.init();

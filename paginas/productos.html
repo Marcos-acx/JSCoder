@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CyberTech</title>
-    <link rel="shortcut icon" href="./iconos/kisspng-advertising-slogan-logo-cyberpunk-2077-logo-5b45d3732927f0.0425947715313027711686.ico">
-    <link rel="stylesheet" href="./SASS/main.css">
-    <link rel="stylesheet" href="./style/iconos-fontawesome/css/all.min.css">
+    <title>CyberTech | Productos</title>
+    <link rel="shortcut icon" href="../iconos/kisspng-advertising-slogan-logo-cyberpunk-2077-logo-5b45d3732927f0.0425947715313027711686.ico">
+    <link rel="stylesheet" href="../SASS/main.css">
+    <link rel="stylesheet" href="../style/iconos-fontawesome/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -21,22 +21,23 @@
     <meta name="keywords" content="gamer, tecnologia, pc, computadora, diseño">
     <meta name="description" content="Ofrecemos componentes tecnologicos al mejor precio del mercado.">
 </head>
-<body class="body-index">
+<body class="body_productos">
     <!-- Header -->
     <header class="header">
         <div class="header-1">
-            <h1><a href="./index.html" target="_self" id="header-logo">CyberTech</a></h1>
+            <h1><a href="../index.html" target="_self" id="header-logo">CyberTech</a></h1>
             <input type="text" placeholder="Buscar producto" class="header__search">
             <div class="header__logos">
                 <button class="header__user">
-                    <a href="./paginas/user.html">
+                    <a href="./user.html">
                         <span><i class="header__user fa-solid fa-user"></i></span>
                         <span class="user-text">Marcos Caceres</span>
                     </a>
                 </button>
                 <button class="header__cart">
-                    <span><i class="fa-solid fa-cart-shopping"><span class="cantidad-carrito"></span></i></span>
+                    <span><i class="fa-solid fa-cart-shopping"></i></span>
                     <span class="cart-text">Carrito</span>
+                    <span class="cantidad-carrito"></span>
                 </button>
             </div>
         </div>
@@ -46,10 +47,10 @@
                 <i class="fas fa-bars"></i>
             </label>
             <ul>
-                <li class="header-menu__item"><a href="./paginas/arma-pc.html">Armá tu pc</a></li>
-                <li class="header-menu__item"><a href="./paginas/productos.html">Productos</a></li>
-                <li class="header-menu__item"><a href="./paginas/contacto.html">Contactanos</a></li>
-                <li class="header-menu__item"><a href="./paginas/ayuda.html">Ayuda</a></li>
+                <li class="header-menu__item"><a href="./arma-pc.html">Armá tu pc</a></li>
+                <li class="header-menu__item"><a href="">Productos</a></li>
+                <li class="header-menu__item"><a href="./contacto.html">Contactanos</a></li>
+                <li class="header-menu__item"><a href="./ayuda.html">Ayuda</a></li>
             </ul>
         </nav>
     </header>
@@ -176,76 +177,145 @@
         </div>
     </div>
     <main class="main">
-        <!-- Slider de imágenes -->
-        <div class="slider">
-            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                  <button  type="button " data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                  <button  type="button " data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                  <button  type="button " data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div>
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="./imagenes/img-ej5.jpg" class="d-block w-100" alt="evga">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="./imagenes/img-ej6.jpg" class="d-block w-100" alt="motherboard">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="./imagenes/img-ej7.jpg" class="d-block w-100" alt="intel">
-                  </div>
-                </div>
-                <button  class="carousel-control-prev" type="button " data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button  class="carousel-control-next" type="button " data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-              </div>
-        </div>
-        <!-- Tabla de marcas -->
-        <section class="marcas" data-aos="fade-up" data-aos-offset="120">
-            <h2 class="marcas__title">Marcas</h2>
-            <div class="marcas-flex">
-                <img src="./imagenes/nvidia.png" alt="img-nvidia_ej" class="marcas-flex__img" data-aos="fade-up" data-aos-offset="170">
-                <img src="./imagenes/amd.png" alt="img-amd_ej1" class="marcas-flex__img" data-aos="fade-up" data-aos-offset="170">
-                <img src="./imagenes/nvidia.png" alt="img-nvidia_ej" class="marcas-flex__img" data-aos="fade-up" data-aos-offset="170">
-                <img src="./imagenes/amd.png" alt="img-amd_ej1" class="marcas-flex__img" data-aos="fade-up" data-aos-offset="170">
-                <img src="./imagenes/nvidia.png" alt="img-nvidia_ej" class="marcas-flex__img" data-aos="fade-up" data-aos-offset="170">
-                <img src="./imagenes/amd.png" alt="img-amd_ej1" class="marcas-flex__img" data-aos="fade-up" data-aos-offset="170">
-                <img src="./imagenes/nvidia.png" alt="img-nvidia_ej" class="marcas-flex__img" data-aos="fade-up" data-aos-offset="170">
-                <img src="./imagenes/amd.png" alt="img-amd_ej1" class="marcas-flex__img" data-aos="fade-up" data-aos-offset="170">
+        <div class="grilla_produc">
+            <!-- Tabla de categorias -->
+            <div class="categorias">
+                <input type="checkbox" id="check-cat">
+                    <label for="check-cat" class="checkcat">
+                        <p>Categorias</p>
+                        <i class="fa-solid fa-list-ul"></i>
+                    </label>
+                <ul class="cat-lista">
+                    <li class="categorias-item">
+                        <a href="" class="categoria__padre">Procesadores</a>
+                        <ul>
+                            <li><a href="" class="categoria__hijo">Intel</a></li>
+                            <li><a href="" class="categoria__hijo">AMD</a></li>
+                        </ul>
+                    </li>
+                    <li class="categorias-item">
+                        <a href="" class="categoria__padre">Placas de video</a>
+                        <ul>
+                            <li><a href="" class="categoria__hijo">Nvidia</a></li>
+                            <li><a href="" class="categoria__hijo">AMD</a></li>
+                        </ul>
+                    </li>
+                    <li class="categorias-item">
+                        <a href="" class="categoria__padre">Memorias ram</a>
+                        <ul>
+                            <li><a href="" class="categoria__hijo">DDR4</a></li>
+                            <li><a href="" class="categoria__hijo">DDR5</a></li>
+                        </ul>
+                    </li>
+                    <li class="categorias-item">
+                        <a href="" class="categoria__padre">Almacenamiento</a>
+                        <ul>
+                            <li><a href="" class="categoria__hijo">SSD</a></li>
+                            <li><a href="" class="categoria__hijo">HDD</a></li>
+                        </ul>
+                    </li>
+                    <li class="categorias-item">
+                        <a href="" class="categoria__padre">Refrigeración</a>
+                        <ul>
+                            <li><a href="" class="categoria__hijo">Por aire</a></li>
+                            <li><a href="" class="categoria__hijo">Líquida</a></li>
+                        </ul>
+                    </li>
+                    <li class="categorias-item">
+                        <a href="" class="categoria__padre">Gabinetes</a>
+                        <ul>
+                            <li><a href="" class="categoria__hijo">ATX</a></li>
+                            <li><a href="" class="categoria__hijo">Mini ATX</a></li>
+                            <li><a href="" class="categoria__hijo">ITX</a></li>
+                        </ul>
+                    </li>
+                    <li class="categorias-item">
+                        <a href="" class="categoria__padre">Fuentes de poder</a>
+                        <ul>
+                            <li><a href="" class="categoria__hijo">650W</a></li>
+                            <li><a href="" class="categoria__hijo">750W</a></li>
+                            <li><a href="" class="categoria__hijo">850W</a></li>
+                        </ul>
+                    </li>
+                    <li class="categorias-item">
+                        <a href="" class="categoria__padre">Monitores</a>
+                        <ul>
+                            <li><a href="" class="categoria__hijo">1080p</a></li>
+                            <li><a href="" class="categoria__hijo">1440p</a></li>
+                            <li><a href="" class="categoria__hijo">2160p</a></li>
+                        </ul>
+                    </li>
+                    <li class="categorias-item">
+                        <a href="" class="categoria__padre">Mouses</a>
+                        <ul>
+                            <li><a href="" class="categoria__hijo">Inalámbricos</a></li>
+                            <li><a href="" class="categoria__hijo">Con cable</a></li>
+                        </ul>
+                    </li>
+                    <li class="categorias-item">
+                        <a href="" class="categoria__padre">Teclados</a>
+                        <ul>
+                            <li><a href="" class="categoria__hijo">Membrana</a></li>
+                            <li><a href="" class="categoria__hijo">Mecáncios</a></li>
+                        </ul>
+                    </li>
+                    <li class="categorias-item">
+                        <a href="" class="categoria__padre">Auriculares</a>
+                        <ul></ul>
+                    </li>
+                    <li class="categorias-item">
+                        <a href="" class="categoria__padre">Wifi</a>
+                        <ul></ul>
+                    </li>
+                    <li class="categorias-item">
+                        <a href="" class="categoria__padre">Cables</a>
+                        <ul></ul>
+                    </li>
+                </ul>
             </div>
-        </section>
-        <!-- Lista de novedades -->
-        <div class="novedades" data-aos="fade-up" data-aos-offset="150">
-            <h2 class="nov__title">Novedades</h2>
-            <div class="container">
-                <div class="row row-cols-1 row-cols-md-3 row-cols-xl-6 productos nov">
+            <div class="main_productos">
+                <!-- Ordenamiento de productos -->
+                <div class="ordenar">
+                    <p>Ordenar por:</p>
+                    <select name="ordenar-por" id="ordenar-por" class="ordenar-por">
+                        <option value="precio">Precio</option>
+                        <option value="relevancia">Relevancia</option>
+                        <option value="antiguedad">Antigüedad</option>
+                    </select>
+                    <p>Orden:</p>
+                    <select name="mayor-menor" id="mayor-menor" class="mayor-menor">
+                        <option value="Descendiente">Descendiente</option>
+                        <option value="Ascendente">Ascendente</option>
+                    </select>
+                </div>
+                <!-- Tabla de productos -->
+                <div class="lista-productos">
+                    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 productos">
+
+                    </div>
+                    
                 </div>
             </div>
         </div>
     </main>
     <!-- Footer -->
-    <footer class="footer navbar navbar-fixed-bottom">
+    <footer class="footer">
         <nav class="footer-menu">
             <ul class="foot-bl1">
-                <li class="footer-menu__item "><a href="./paginas/ayuda.html">Formas de pago</a></li>
-                <li class="footer-menu__item"><a href="./paginas/ayuda.html">Políticas y garantía</a></li>
-                <li class="footer-menu__item"><a href="./paginas/ayuda.html">Financiación</a></li>
-                <li class="footer-menu__item"><a href="./paginas/ayuda.html">Envíos</a></li>
-                <li class="footer-menu__item"><a href="./paginas/ayuda.html">Servicio al cliente</a></li>
-                <li class="footer-menu__item"><a href="./paginas/ayuda.html">Nosotros</a></li>
+                <li class="footer-menu__item "><a href="./ayuda.html" target="_self">Formas de pago</a></li>
+                <li class="footer-menu__item"><a href="./ayuda.html" target="_self">Políticas y garantía</a></li>
+                <li class="footer-menu__item"><a href="./ayuda.html" target="_self">Financiación</a></li>
+                <li class="footer-menu__item"><a href="./ayuda.html" target="_self">Envíos</a></li>
+                <li class="footer-menu__item"><a href="./ayuda.html" target="_self">Servicio al cliente</a></li>
+                <li class="footer-menu__item"><a href="./ayuda.html" target="_self">Nosotros</a></li>
             </ul>
             <ul class="foot-bl2">
                 <li class="footer-menu__item wsp"><i class="fa-brands fa-whatsapp"></i> Whatsapp: (+54) 11 1234 5678</li>
                 <li class="footer-menu__item"><a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
                 <li class="footer-menu__item"><a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-square-facebook"></i> Facebook</a></li>
                 <li class="footer-menu__item"><a href="https://www.youtube.com" target="_blank"><i class="fa-brands fa-youtube"></i> Youtube</a></li>
-                <li class="footer-menu__item"><a href="./paginas/ayuda.html">¿Cómo comprar?</a></li>
-                <li class="footer-menu__item"><a href="./paginas/ayuda.html">Preguntas frecuentes</a></li>
+                <li class="footer-menu__item"><a href="./ayuda.html" target="_self">¿Cómo comprar?</a></li>
+                <li class="footer-menu__item"><a href="./ayuda.html" target="_self">Preguntas frecuentes</a></li>
             </ul>
             <ul class="foot-bl3">
                 <li class="footer-menu__item"><a href="https://www.google.com.ar/maps" target="_blank">CABA Calle 1234</a></li>
@@ -254,10 +324,10 @@
         </nav>
     </footer>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="JS/animatedModal.min.js"></script>
+    <script src="../JS/animatedModal.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="./JS/Stock.js"></script>
-    <script src="./JS/main.js"></script>
+    <script src="../JS/Stock.js"></script>
+    <script src="../JS/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script> 
     <script>
         AOS.init();
