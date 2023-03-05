@@ -422,11 +422,11 @@ comprar.addEventListener("click", () => {
         campo.classList.contains("correcto") ? camposCorrectos : camposCorrectos = false
     })
     modal = document.getElementById("animatedModal")
-    if (camposCorrectos)
+    if (camposCorrectos || tipoEntrega.id == "entregaRetiro")
     {
         modal.classList.remove("ocultar-ventana")
     }
-    else
+    else if (!camposCorrectos && tipoEntrega.id == "entregaCorreo")
     {
         modal.classList.add("ocultar-ventana")
         Swal.fire({
@@ -498,7 +498,7 @@ const nRandom = () => {
 
 const crearPedido = () => {
     let subtotal = calcTotalCarrito()
-    let costodeEnvio = costoEnvio()
+    let costodeEnvio = costoEnvio() || 0
     let interes = selecInteres()
     let cuotas = Number(seleCuotas.value)
     let tipoEnvio = document.querySelector(".marcado").id
@@ -525,28 +525,35 @@ btnFinalizarCompra.addEventListener("click", () => {
 
     if (camposCorrectos)
     {
-        document.getElementById("animatedModal").style.zIndex = "1000"
-        crearPedido()
-        Swal.fire({
-            title: 'Cargando...',
-            allowOutsideClick: false,
-            allowEscapeKey: false,
-            allowEnterKey: false,
-            timer: 5000,
-            didClose: () => {
-                Swal.fire ({
-                    icon: 'success',
-                    title: '¡Compra realizada!',
-                }).then(() => {
-                    localStorage.removeItem("carrito")
-                    carrito = []
-                    location.reload()
-                })
-            }
-          });
-          Swal.showLoading();
+        animacionFinCompra()
     }
 })
+
+const animacionFinCompra = () => {
+    document.getElementById("animatedModal").style.zIndex = "1000"
+    crearPedido()
+    Swal.fire({
+        title: 'Cargando...',
+        allowOutsideClick: false,
+        allowEscapeKey: false,
+        allowEnterKey: false,
+        timer: 5000,
+        didClose: () => {
+            Swal.fire ({
+                icon: 'success',
+                title: '¡Compra realizada!',
+                background: '#080b22',
+                color: 'white',
+            }).then(() => {
+                localStorage.removeItem("carrito")
+                carrito = []
+                location.reload()
+            })
+        }
+      });
+      Swal.showLoading();
+}
+
 /* Renderizar pedidos en página de usuario */
 const rendPedidos = () => {
     let contPedidos = document.querySelector(".listaPedidos")
