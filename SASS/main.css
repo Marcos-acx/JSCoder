@@ -1421,6 +1421,9 @@
     margin-right: 10px;
     color: #ffffff;
   }
+  .header__logos .header__cart, .header__logos .header__user {
+    margin-right: 0;
+  }
   .header__logos button .cantidad-carrito {
     right: 55px;
     top: 16%;
@@ -1487,6 +1490,17 @@
 }
 /* Pantallas mobile */
 @media (max-width: 768px) {
+  .ventana_carrito {
+    padding-top: 20px;
+  }
+  .ventana_carrito .carrito_vacio {
+    top: 55%;
+  }
+  .ventana_carrito .carrito_nav button {
+    left: auto;
+    top: 31%;
+    font-size: 30px;
+  }
   .ventana_carrito .productos_carrito {
     margin-top: 50px;
     width: 80vw;
@@ -1524,6 +1538,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+  .ventana_carrito .info_compra.ocultar-ventana {
+    display: none;
   }
   .ventana_carrito .info_compra .tipo_envio button {
     margin-block: 6px;

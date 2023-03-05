@@ -22,6 +22,9 @@
                 margin-right: 10px;
                 color: #ffffff;
             }
+            .header__cart, .header__user {
+                margin-right: 0;
+            }
             button {
             .cantidad-carrito {
                 right: 55px;
@@ -113,6 +116,17 @@
 
 @media (max-width: 768px) {
     .ventana_carrito {
+        padding-top: 20px;
+        .carrito_vacio {
+            top: 55%;
+        }
+        .carrito_nav {
+            button {
+                left: auto;
+                top: 31%;
+                font-size: 30px;
+            }
+        }
         .productos_carrito {
             margin-top: 50px;
             width: 80vw;
@@ -151,6 +165,9 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            &.ocultar-ventana {
+                display: none;
+            }
             .tipo_envio {
                 button {
                     margin-block: 6px;
