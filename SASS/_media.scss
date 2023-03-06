@@ -160,14 +160,25 @@
             }
 
         }
+        .input {
+            width: 300px;
+            text-align: center;
+        }
+        select {
+            width: 300px;
+        }
         .info_compra {
             width: 700px;
+            height: fit-content;
+            max-height: 700px;
+            padding-block: 0;
             flex-direction: column;
             align-items: center;
             &.ocultar-ventana {
                 display: none;
             }
             .tipo_envio {
+                padding-top: 16px;
                 button {
                     margin-block: 6px;
                 }
@@ -192,6 +203,9 @@
 
             }
 
+        }
+        #btnComprar {
+            padding-bottom: 20px;
         }
     }
     /* header */

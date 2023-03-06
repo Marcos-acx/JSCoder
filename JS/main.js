@@ -71,6 +71,14 @@ const sumProductos = (productoAgregado) => {
         {
             producto.cantidad++
             producto.subtotal = producto.precio*producto.cantidad
+            Toastify({
+                text: "¡Producto sumado correctamente!",
+                duration: "3000",
+                gravity: "bottom",
+                style: {
+                    background: "green",
+                }
+            }).showToast()
             return producto
         }
         else
@@ -85,6 +93,10 @@ const restProductos = (productoAgregado) => {
         {
             producto.cantidad--
             producto.subtotal -= producto.precio
+            Toastify({
+                text: "¡Producto restado correctamente!",
+                gravity: "bottom",
+            }).showToast()
             return producto
         }
         else
@@ -96,6 +108,14 @@ const restProductos = (productoAgregado) => {
 const eliminarPod = (productoEliminado) => {
     let index = carrito.findIndex(producto => producto.nombre === productoEliminado.nombre)
     carrito.splice(index, 1)
+    Toastify({
+        text: "¡Producto eliminado correctamente!",
+        duration: "3000",
+        gravity: "bottom",
+        style: {
+            background: "orange",
+        }
+    }).showToast()
 }
 
 /* Verifica si el producto ya estaba o no en el carrito y lo agrega según sea el caso */
@@ -106,8 +126,17 @@ function agregarProducto(e){
     producto ? productoAgregado = leerDatosProducto(producto) : productoAgregado
 
     if (producto)
+    {
         carrito.find((producto) => producto.nombre === productoAgregado.nombre) ? sumProductos(productoAgregado) : carrito.push(productoAgregado)
-    
+        Toastify({
+            text: "¡Producto agregado correctamente!",
+            duration: "3000",
+            gravity: "bottom",
+            style: {
+                background: "green",
+            }
+        }).showToast()
+    }
     toLocalStorage("carrito", carrito)
     actualizarRendCarrito()
     crearListaProd()
@@ -129,9 +158,13 @@ const editarCarrito = (e) => {
     }
     else if (e.target.classList.contains('cant-rest'))
     {
-            if (productoEditado.cantidad > 1) {
-                restProductos(productoEditado)
-            }
+            productoEditado.cantidad > 1 ? restProductos(productoEditado) : Toastify({
+                text: "¡No puedes restar mas unidades de este producto! Aprieta el ícono de cesto de basura para eliminar del carrito.",
+                gravity: "bottom",
+                style: {
+                    background: "red",
+                }
+            }).showToast()
     }
 
     else if (e.target.classList.contains('eliminar-prod'))
@@ -145,6 +178,7 @@ const editarCarrito = (e) => {
     actualizarRendCarrito()
     crearListaProd()
     cantProdCarrito()
+    costoEnvio()
 }
 
 /* Carrito de compras */
@@ -374,6 +408,7 @@ const validarTipoEntrega = (e) => {
             document.querySelector("#form_direccion").classList.add("mostrar")
             document.querySelector("#entregaRetiro").classList.remove("marcado")
             e.target.classList.add("marcado")
+            costoEnvio()
             break;
         case "entregaRetiro": 
             document.querySelector("#form_direccion").classList.remove("mostrar")
@@ -537,7 +572,7 @@ const animacionFinCompra = () => {
         allowOutsideClick: false,
         allowEscapeKey: false,
         allowEnterKey: false,
-        timer: 5000,
+        timer: 4000,
         didClose: () => {
             Swal.fire ({
                 icon: 'success',
