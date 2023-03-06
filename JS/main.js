@@ -71,14 +71,6 @@ const sumProductos = (productoAgregado) => {
         {
             producto.cantidad++
             producto.subtotal = producto.precio*producto.cantidad
-            Toastify({
-                text: "¡Producto sumado correctamente!",
-                duration: "3000",
-                gravity: "bottom",
-                style: {
-                    background: "green",
-                }
-            }).showToast()
             return producto
         }
         else
@@ -155,6 +147,14 @@ const editarCarrito = (e) => {
             producto.classList.remove('min')
         }
         sumProductos(productoEditado)
+        Toastify({
+            text: "¡Producto sumado correctamente!",
+            duration: "3000",
+            gravity: "bottom",
+            style: {
+                background: "green",
+            }
+        }).showToast()
     }
     else if (e.target.classList.contains('cant-rest'))
     {
