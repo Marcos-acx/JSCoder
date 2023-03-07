@@ -133,6 +133,7 @@ function agregarProducto(e){
     actualizarRendCarrito()
     crearListaProd()
     cantProdCarrito()
+    selecInteres()
 }
 
 const editarCarrito = (e) => {
@@ -179,6 +180,7 @@ const editarCarrito = (e) => {
     crearListaProd()
     cantProdCarrito()
     costoEnvio()
+    selecInteres()
 }
 
 /* Carrito de compras */
