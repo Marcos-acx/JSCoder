@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CyberTech | Usuario</title>
+    <title>CyberTech | Producto</title>
     <link rel="shortcut icon" href="../iconos/kisspng-advertising-slogan-logo-cyberpunk-2077-logo-5b45d3732927f0.0425947715313027711686.ico">
     <link rel="stylesheet" href="../SASS/main.css">
     <link rel="stylesheet" href="../style/iconos-fontawesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,7 +22,7 @@
     <meta name="keywords" content="gamer, tecnologia, pc, computadora, diseño">
     <meta name="description" content="Ofrecemos componentes tecnologicos al mejor precio del mercado.">
 </head>
-<body class="body_user">
+<body class="body_infoProducto">
     <!-- Header -->
     <header class="header">
         <div class="header-1">
@@ -33,7 +33,7 @@
             </div>
             <div class="header__logos">
                 <button class="header__user">
-                    <a href="">
+                    <a href="./user.html">
                         <span><i class="header__user fa-solid fa-user"></i></span>
                         <span class="user-text">Marcos Caceres</span>
                     </a>
@@ -54,30 +54,43 @@
             </label>
             <ul>
                 <li class="header-menu__item"><a href="./arma-pc.html">Armá tu pc</a></li>
-                <li class="header-menu__item"><a href="./productos.html">Productos</a></li>
+                <li class="header-menu__item"><a href="./productos.html"> Productos</a></li>
                 <li class="header-menu__item"><a href="./contacto.html">Contactanos</a></li>
                 <li class="header-menu__item"><a href="./ayuda.html">Ayuda</a></li>
             </ul>
         </nav>
     </header>
-    <main class="main user">
-        <div class="usuario">
-            <div class="container pedidos">
-            <h2>Pedidos:</h2>
-            <div class="listaPedidos">
+    <main class="main">
+        <section class="py-5">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="row gx-4 gx-lg-5 align-items-center contenedorProducto">
+                    <div class="col-md-6 img"><img class="card-img-top mb-5 mb-md-0" src="https://dummyimage.com/600x700/dee2e6/6c757d.jpg" alt="..." /></div>
+                    <div class="col-md-6">
+                        <span class="small mb-1">Id: <span class="id"></span></span>
+                        <h1 class="display-5 fw-bolder nombreProd"></h1>
+                        <div class="fs-5 mb-5">
+                            <span class="precio"></span>
+                        </div>
+                        <p class="descripcion"></p>
+                        <div class="d-flex">
+                            <div class="editCant min">
+                                <button><span><i class="fa-solid fa-plus edit cant-sum"></i></span></button>
+                                <span class="cantidadProd cantidad">1</span>
+                                <button><span><i class="fa-solid fa-minus edit cant-rest"></i></span></button>
+                            </div>
+                            <button class="btn btn-outline-dark flex-shrink-0 agregar-carrito" type="button">
+                                <span class="agregar-carritoProd">Agregar al Carrito</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="infoEnvio">
-            <h2>Usuario: Marcos Cáceres</h2>
-            <h2>Información de envío predeterminada:</h2>
-            <p>País: Argentina</p>
-            <p>Buenos Aires, General Paz 1335</p>
-            <p>Piso 4, puerta 24</p>
-        </div>
-    </div>
+        </section>
     </main>
+
+
 <!-- Footer -->
-    <footer class="footer navbar navbar-fixed-bottom">
+    <footer class="footer">
         <nav class="footer-menu">
             <ul class="foot-bl1">
                 <li class="footer-menu__item "><a href="./ayuda.html" target="_self">Formas de pago</a></li>

@@ -1,8 +1,6 @@
-.ventana_carrito {
+.main_carrito {
     background: rgb(112,2,92);
     background: linear-gradient(126deg, rgba(112,2,92,1) 0%, rgba(36,30,64,1) 32%, rgba(17,15,54,1) 49%, rgba(10,9,36,1) 60%, rgba(12,11,31,1) 62%, rgba(21,1,50,1) 100%);
-    display: none;
-    width: 100%;
     min-height: 60vh;
     text-align: center;
     flex-direction: column;
@@ -20,9 +18,9 @@
         justify-content: space-around;
     }
     .carrito_vacio {
-        display: block;
+/*         display: block;
         position: absolute;
-        top: 40%;
+        top: 40%; */
         height: 33px;
         color: rgb(255, 255, 255);
         font-family: 'Montserrat', sans-serif;
@@ -284,9 +282,6 @@
             color: black;
         }
     }
-}
-.ventana_carrito.abierto {
-    display: flex;
 }
 .productos_carrito.ocultar-ventana {
     display: none;

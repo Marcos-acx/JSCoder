@@ -30,6 +30,9 @@
         font-size: 19px;
         font-weight: lighter;
         margin-inline: 8%;
+        &:hover {
+            font-weight: bolder;
+        }
     }
     .lista-prod__precio {
         position: absolute;

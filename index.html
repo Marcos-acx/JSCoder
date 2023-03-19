@@ -27,7 +27,11 @@
     <header class="header">
         <div class="header-1">
             <h1><a href="./index.html" target="_self" id="header-logo">CyberTech</a></h1>
-            <input type="text" placeholder="Buscar producto" class="header__search">
+            <div class="header__search">
+                <input type="text" placeholder="Buscar producto" class="search__input">
+                <i class="fa-solid fa-search buscarProducto"></i>
+            </div>
+
             <div class="header__logos">
                 <button class="header__user">
                     <a href="./paginas/user.html">
@@ -36,8 +40,11 @@
                     </a>
                 </button>
                 <button class="header__cart">
-                    <span><i class="fa-solid fa-cart-shopping"><span class="cantidad-carrito"></span></i></span>
-                    <span class="cart-text">Carrito</span>
+                    <a href="./paginas/carrito.html">
+                        <span><i class="fa-solid fa-cart-shopping"></i></span>
+                        <span class="cart-text">Carrito</span>
+                        <span class="cantidad-carrito"></span>
+                    </a>
                 </button>
             </div>
         </div>
@@ -54,128 +61,6 @@
             </ul>
         </nav>
     </header>
-    <!-- Carrito de compras -->
-    <div class="ventana_carrito">
-        <div class="carrito_nav">
-            <button><i class="fa-solid fa-arrow-left cerrar_carrito"></i></button>
-            <h2>Carrito de compras</h2>
-        </div>
-        <div class="compra">
-            <p class="carrito_vacio">No hay productos en el carrito</p>
-            <div class="productos_carrito">
-            </div>
-            <div class="info_compra">
-                <div class="info_envio">
-                    <div class="tipo_envio">
-                        <p>Envio:</p>
-                        <button id="entregaCorreo">Correo argentino</button>
-                        <button id="entregaRetiro">Retiro en persona</button>
-                    </div>
-                    <p>Dirección: </p>
-                    <form action="" method="" id="form_direccion">
-                        <div class="div_input direc grupo_direccion">
-                            <input type="text" name="direccion" class="input direccion" placeholder="Calle, número, piso, puerta.">
-                            <p class="msj_inc direccion">La dirección debe tener entre 10 y 40 letras, sin caracteres especiales.</p>
-                        </div>
-                        <div class="div_input direc grupo_cp">
-                            <input type="text" name="cp" class="input cp" placeholder="Código postal">
-                            <p class="msj_inc cp">El código postal debe tener entre 4 y 10 números unicamente.</p>
-                        </div>
-                        <div class="div_input direc grupo_municipio">
-                            <input type="text" name="municipio" class="input municipio" placeholder="Municipio">
-                            <p class="msj_inc municipio">El municipio debe tener entre 4 y 40 letras, sin números ni caracteres especiales.</p>
-                        </div>
-                        <select name="Provincia" id="select-provincia" class="select provincia">
-                            <option value="caba">Ciudad Autónoma de Buenos Aires</option>
-                            <option value="pba">Provincia de Buenos Aires</option>
-                            <option value="tucuman">Tucumán</option>
-                            <option value="cordoba">Córdoba</option>
-                            <option value="santa fe">Santa Fé</option>
-                            <option value="salta">Salta</option>
-                            <option value="mendoza">Mendoza</option>
-                            <option value="misiones">Misiones</option>
-                            <option value="tierra del fuego">Tierra del Fuego</option>
-                            <option value="rio negro">Río Negro</option>
-                            <option value="chubut">Chubút</option>
-                            <option value="san luis">San Luis</option>
-                            <option value="san juan">San Juan</option>
-                            <option value="santiago del estero">Santiago del Estero</option>
-                            <option value="formosa">Formosa</option>
-                            <option value="entre rios">Entre Ríos</option>
-                            <option value="corrientes">Corrientes</option>
-                            <option value="la pampa">La Pampa</option>
-                            <option value="la rioja">La Rioja</option>
-                            <option value="catamarca">Catamarca</option>
-                            <option value="jujuy">Jujuy</option>
-                            <option value="santa cruz">Santa Cruz</option>
-                            <option value="chaco">Chaco</option>
-                            <option value="Neuquen">Neuquen</option>
-                        </select>
-                    </form>
-                    <div class="total">
-                        <h2>Total:</h2>
-                        <h3 id="precio_final">$-</h2>
-                        <h2>Envio:</h2>
-                        <h3 id="precio_envio">$-</h2>
-                        <i class="fa-regular fa-circle-question infoEnvio"></i>
-                    </div>
-                    <a href="#animatedModal" id="btnComprar"><button type="submit" class="btn_comprar">Comprar</button></a>
-                    <div id="animatedModal">
-                        <div class="close-animatedModal"><i class="fa-regular fa-circle-xmark"></i></div>
-                        <div class="modal-content">
-                            <div class="container p-0">
-                                <div class="card px-4 cuotas">
-                                    <p class="h8 py-3">Cuotas: </p>
-                                    <select name="cuotas" id="cantCuotas">
-                                        <option value="1" selected>1 Cuota (0% Interés)</option>
-                                        <option value="3">3 Cuotas (10% Interés)</option>
-                                        <option value="6">6 Cuotas (19% Interés)</option>
-                                        <option value="12">12 Cuotas (27% Interés)</option>
-                                    </select>
-                                </div>
-                                <div class="card px-4">
-                                    <p class="h8 py-3">Detalles de Pago</p>
-                                    <div class="row gx-3 datosTarjeta">
-                                        <div class="col-12">
-                                            <div class="d-flex flex-column div_input pago grupo_nombre">
-                                                <p class="text mb-1">Nombre completo (Como figura en la tarjeta)</p>
-                                                <input class="form-control mb-3 nombre" type="text" placeholder="Nombre" name="nombre">
-                                                <p class="msj_inc">El nombre debe tener entre 7 y 40 carácteres, sin '.' ni ',', sin números y sin carácteres especiales.</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="d-flex flex-column div_input pago grupo_numeroTarj">
-                                                <p class="text mb-1">Número de tarjeta</p>
-                                                <input class="form-control mb-3 tarjeta" type="text" placeholder="1234 5678 435678" name="tarjeta">
-                                                <p class="msj_inc">Número de tarjeta incorrecto.</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-6">
-                                            <div class="d-flex flex-column div_input correcto">
-                                                <p class="text mb-1">Fecha de expiración</p>
-                                                <input class="form-control mb-3 fechaExp" type="text" placeholder="MM/AA" name="fechaExp">
-                                            </div>
-                                        </div>
-                                        <div class="col-6">
-                                            <div class="d-flex flex-column div_input correcto">
-                                                <p class="text mb-1">CVV/CVC</p>
-                                                <input class="form-control mb-3 pt-2 cvv" type="password" placeholder="***" name="cvv">
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="btn btn-primary mb-3" id="finalizarCompra">
-                                                <span class="ps-3 totalFinal"></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <main class="main">
         <!-- Slider de imágenes -->
         <div class="slider">
@@ -258,7 +143,6 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="JS/animatedModal.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="./JS/Stock.js"></script>
     <script src="./JS/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script> 
     <script>
