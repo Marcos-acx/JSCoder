@@ -49,6 +49,9 @@
         border: solid 1px black;
         height: fit-content;
         width: fit-content;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
         padding: 4px 5px;
         input {
             text-align: center;
@@ -65,6 +68,8 @@
         i {
             color: black;
             cursor: pointer;
+            display: flex;
+            align-items: center;
         }
     }
 

@@ -192,6 +192,9 @@
   height: fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
   padding: 4px 5px;
 }
 .header__search input {
@@ -209,6 +212,8 @@
 .header__search i {
   color: black;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 .header__logos {
   margin-right: 60px;
