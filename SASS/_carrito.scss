@@ -212,7 +212,6 @@
         padding-block: 40px;
         border-radius: 8px;
         box-shadow: 0 4px 9px rgba(0, 0, 0, 0.444);
-        min-width: 700px;
         height: 537px;
         display: flex;
         flex-direction: column;
@@ -226,7 +225,6 @@
         }
         .card.prod.carrito {
             flex-direction: row;
-            min-width: 600px;
             height: 200px;
             padding-inline: 20px;
             align-items: center;

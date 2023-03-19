@@ -143,7 +143,7 @@ const sumRestCant = (e) => {
 if (editCant)
     editCant.addEventListener("click", sumRestCant)
 /* Verifica en qué posición relativa del proyecto está y cambia la ruta hacia la página del prod */
-const crearRutaRelativa = (finRuta, nombreArchivo) => {
+const crearRutaRelativa = (nombreArchivo) => {
     let rutaActual = window.location.pathname
     let directorioActual = rutaActual.substring(0, rutaActual.lastIndexOf('/'))
     let rutaRelativa = !directorioActual.includes("paginas") ? ("./paginas/"+nombreArchivo) : directorioActual + "/" + nombreArchivo 
@@ -551,6 +551,8 @@ const costoEnvio = () => {
                 break;
         }
     }
+    if (tipoEntrega.id ==="entregaRetiro")
+        costoEnvio = 0
 
     total >= 100000 ? costoEnvio = 0 : switcEnvio()
     rendCostoEnvio(costoEnvio)
@@ -565,6 +567,9 @@ const comprarProd = () => {
     document.querySelectorAll(".div_input.direc").forEach((campo) => {
         campo.classList.contains("correcto") ? camposCorrectos : camposCorrectos = false
     })
+    if (selectProv.value == "pred")
+        camposCorrectos = false
+    
     modal = document.getElementById("animatedModal")
 
     if ((camposCorrectos || tipoEntrega.id == "entregaRetiro") && carrito.length > 0)
@@ -915,7 +920,7 @@ async function buscarProductos() {
     {
         toLocalStorage("busquedaProd", prodFiltrados)
         toLocalStorage("busqueda", busqueda)
-        let rutaRelativa = crearRutaRelativa("./paginas/productos.html", "productos.html")
+        let rutaRelativa = crearRutaRelativa("productos.html")
         window.location.href = rutaRelativa
     }
     else {
