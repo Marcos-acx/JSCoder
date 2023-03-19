@@ -145,8 +145,11 @@ if (editCant)
 /* Verifica en qué posición relativa del proyecto está y cambia la ruta hacia la página del prod */
 const crearRutaRelativa = (finRuta, nombreArchivo) => {
     let rutaActual = window.location.pathname
+    console.log(rutaActual)
     let directorioActual = rutaActual.substring(0, rutaActual.lastIndexOf('/'))
-    let rutaRelativa = directorioActual ? nombreArchivo : directorioActual + finRuta
+    console.log(directorioActual)
+    let rutaRelativa = !directorioActual.includes("paginas") ? ("./paginas/"+nombreArchivo) : directorioActual + finRuta
+    console.log(rutaRelativa);
     return rutaRelativa;
 }
 
