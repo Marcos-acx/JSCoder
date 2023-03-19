@@ -145,7 +145,7 @@
   top: 0%;
   width: 100%;
   flex-direction: column;
-  z-index: 100;
+  z-index: 99;
 }
 .header-1 {
   background-color: #080b22;
@@ -184,8 +184,8 @@
 }
 .header__search {
   border-radius: 17px;
-  background-color: white;
-  border-radius: 10px;
+  background-color: rgb(255, 254, 254);
+  border-radius: 9px;
   border-bottom-right-radius: 0px;
   border: solid 1px black;
   height: -moz-fit-content;
@@ -345,7 +345,7 @@
 
 .main_carrito {
   background: rgb(112, 2, 92);
-  background: linear-gradient(126deg, rgb(112, 2, 92) 0%, rgb(36, 30, 64) 32%, rgb(17, 15, 54) 49%, rgb(10, 9, 36) 60%, rgb(12, 11, 31) 62%, rgb(21, 1, 50) 100%);
+  background: linear-gradient(126deg, rgb(112, 2, 92) 0%, rgb(40, 33, 70) 32%, rgb(17, 15, 54) 49%, rgb(10, 9, 36) 60%, rgb(12, 11, 31) 62%, rgb(21, 1, 50) 100%);
   min-height: 60vh;
   text-align: center;
   flex-direction: column;
@@ -2003,7 +2003,4 @@ body.body_infoProducto .contenedorProducto .editCant.min .cant-rest {
     font-size: 23px;
   }
   /* Usuario */
-  .body_user .infoPedido .card {
-    width: 100%;
-  }
 }/*# sourceMappingURL=main.css.map */

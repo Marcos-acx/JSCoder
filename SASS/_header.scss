@@ -3,7 +3,7 @@
     top: 0%;
     width: 100%;
     flex-direction: column;
-    z-index: 100;
+    z-index: 99;
 
     &-1 {
         background-color: #080b22;
@@ -43,8 +43,8 @@
 
     &__search {
         border-radius: 17px;
-        background-color: white;
-        border-radius: 10px;
+        background-color: rgb(255, 254, 254);
+        border-radius: 9px;
         border-bottom-right-radius: 0px;
         border: solid 1px black;
         height: fit-content;
@@ -67,9 +67,6 @@
             cursor: pointer;
         }
     }
-
-
-
 
     &__logos {
         margin-right: 60px;
