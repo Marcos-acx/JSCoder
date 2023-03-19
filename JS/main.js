@@ -47,7 +47,13 @@ const actualizarRendProd = (lista_prod, contenedor) => {
 }
 
 async function cargarStock() {
-    const response = await fetch("../data/stock.json")
+    let response
+    let rutaActual = window.location.pathname
+    if (rutaActual.includes("paginas"))
+        response = await fetch("../data/stock.json")
+    else {
+        response = await fetch("./data/stock.json")
+    }
     let productosStock = await response.json()
     return productosStock
 }
