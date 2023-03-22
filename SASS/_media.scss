@@ -51,7 +51,12 @@
     }
 
     /* index */
-
+    .novedades {
+        .swiper {
+            width: 740px;
+            height: 500px;
+        }
+    }
     .slider {
         margin-inline: 20px;
         border-color: white;
@@ -109,6 +114,9 @@
 
     .productos {
         margin-right: 0;
+    }
+    .grilla_produc {
+        width: 100vw;
     }
     .main_productos {
         .ordenar {
@@ -332,12 +340,18 @@
             }
         }
     }
+    .novedades {
+        .swiper {
+            width: 330px;
+            height: 500px;
+          }
+    }
     .productos.nov{
         margin-inline: auto;
         .card {
             margin: auto;
             margin-top: 10px;
-            width: 70vw;
+            width: 330px;
             font-size: 20px;
             button {
                 font-size: 26px;
@@ -504,6 +518,18 @@
     }
     .nav h4 {
         font-size: 23px;
+    }
+    .main.arma-pc {
+        .productos-comp {
+            .swiper {
+                height: 600px;
+            }
+            .productos.arma-pc {
+                .card.prod {
+                    width: 70vw;
+                }
+            }
+        }
     }
     /* Usuario */
 }

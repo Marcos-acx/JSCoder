@@ -90,7 +90,16 @@
     padding-bottom: 3%;
     background-color: #0a172d44;
     margin-bottom: 8%;
-
+    .swiper {
+        height: 500px;
+        width: auto;
+    }
+    .swiper-button-prev {
+        margin-left: 50px;
+    }
+    .swiper-button-next {
+        margin-right: 50px;
+    }
     .nov__title {
         font-family: neon;
         margin-top: 15px;
@@ -351,7 +360,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    width: 80%;
+    width: 90%;
     padding-inline: 40px;
     padding-top: 20px;
     background-color: rgba(67, 53, 77, 0.274);
@@ -401,24 +410,17 @@
             border-bottom: solid 1px rgba(96, 189, 194, 0.377);
             list-style:none;
         }
-        .lista-productos {
-            min-width: 70vw;
-            .col {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-        }
+    }
+    .lista-productos {
+        min-width: 100%;
+        display: flex;
+    }
+    .swiper {
+        width: 900px;
     }
     .productos {
-        display: flex;
-        flex-wrap: wrap;
-        margin-top: 3%;
-        padding-bottom: 40px;
-        justify-content: center;
-        .col {
-            width: fit-content;
-        }
+        width: 100%;
+        padding-bottom: 50px;
         .card.prod {
             width: 260px;
     
@@ -533,8 +535,9 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-
-        a {
+        height: auto;
+        width: 100vw;
+        i.nav {
             font-size: 30px;
             color: rgb(227, 93, 242);
             text-shadow: 0 2px 3px rgba(0, 0, 0, 0.658);
@@ -544,9 +547,20 @@
                 text-shadow: 0 2px 3px rgba(165, 83, 174, 0.542);
             }
         }
+        .swiper {
+            height: 900px;
+            width: 70%;
+          }
         .productos.arma-pc{
+            width: auto;
+            display: flex;
+            flex-direction: row;
+            .card-slide {
+                height: fit-content;
+                margin: 0%;
+            }
             .card.prod{
-                width: 100%;
+                width: 250px;
                 font-size: 20px;
                 margin: 0%;
                 margin-bottom: 16px;

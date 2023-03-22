@@ -18,6 +18,30 @@ function leerDatosProducto(producto) {
     return productoAgregado;
 }
 
+const rendProdCarrusel = (lista_prod, contenedor) => {
+    contenedor.innerHTML = ""
+    carrito = JSON.parse(localStorage.getItem('carrito')) || []
+    let cant_act = ""
+    let cant
+
+    lista_prod.forEach((producto) => {
+        cant_act = (carrito.find(prod => prod.id === producto.id)) && "activo"
+        cant = (carrito.find((prod) => prod.id === producto.id))?.cantidad || 1
+
+        contenedor.innerHTML += `
+        <div class="swiper-slide card-slide">
+            <div class="card prod" data-product-id="${producto.id}">
+                <img class="lista-prod__img infoProd" src="${producto.img}" alt="${producto.nombre}">
+                <p class="lista-prod__nombre infoProd">${producto.nombre}</p>
+                <p class="lista-prod__precio">$${producto.precio.toLocaleString("es-ES")}</p>
+                <button><i class="fa-solid fa-cart-plus agregar-carrito"></i>
+                <span class="cantidad agregar-carrito ${cant_act}">${cant}</span></button>
+            </div>
+        </div>
+                        `;
+    })
+}
+
 const actualizarRendProd = (lista_prod, contenedor) => {
     contenedor.innerHTML = ""
     carrito = JSON.parse(localStorage.getItem('carrito')) || []
@@ -63,13 +87,19 @@ async function cargarStock() {
 async function crearListaProd() {
     let productosStock = await cargarStock()
 
-    contenedor = document.querySelector('.productos.nov');
+    let contenedor = document.querySelector('.productos.nov');
     if (contenedor){
-        let lista_prod = productosStock.filter(producto => producto.precio > 25000)
+        let lista_prod = productosStock.filter(producto => producto.precio > 17000)
         lista_prod.forEach((producto) => {
             producto.img = producto.img.replace("..", ".")
         })
-        actualizarRendProd(lista_prod, contenedor)
+        rendProdCarrusel(lista_prod, contenedor)
+    }
+
+    contenedor = document.querySelector(".productos.arma-pc")
+    if (contenedor)
+    {
+        rendProdCarrusel(productosStock, contenedor)
     }
 }
 
@@ -159,8 +189,7 @@ async function guardarInfoProd (e){
         producto = listaStock.find((prod) => prod.id === id)
  
         toLocalStorage("infoProducto", producto)
-        let finRuta = "./paginas/producto.html"
-        let rutaRelativa = crearRutaRelativa(finRuta, "producto.html")
+        let rutaRelativa = crearRutaRelativa("producto.html")
 
         window.open(rutaRelativa, '_blank')
     }
@@ -545,16 +574,17 @@ const costoEnvio = () => {
                 costoEnvio = 1200
             break;
             case "pred":
+                costoEnvio = 0
                 break;
             default:
                 costoEnvio = 1750
                 break;
         }
     }
-    if (tipoEntrega.id ==="entregaRetiro")
-        costoEnvio = 0
 
     total >= 100000 ? costoEnvio = 0 : switcEnvio()
+    if (tipoEntrega.id ==="entregaRetiro")
+        costoEnvio = 0
     rendCostoEnvio(costoEnvio)
     return costoEnvio
 }
@@ -634,7 +664,6 @@ const selecInteres = () => {
 }
 if (seleCuotas)
 {
-    let cantCuotas = seleCuotas.value
     seleCuotas.addEventListener("click", selecInteres)
 }
 
@@ -642,7 +671,6 @@ if (seleCuotas)
 const calcTotalFinal = (interes) => {
     let subtotal = calcTotalCarrito()
     let costodeEnvio = costoEnvio()
-
     return (total = (subtotal*interes)+subtotal+costodeEnvio)
 }
 
@@ -671,6 +699,7 @@ const nRandom = () => {
 const crearPedido = () => {
     let subtotal = calcTotalCarrito()
     let costodeEnvio = costoEnvio() || 0
+    console.log(costodeEnvio);
     let interes = selecInteres()
     let cuotas = Number(seleCuotas.value)
     let tipoEnvio = document.querySelector(".marcado").id
@@ -710,6 +739,8 @@ const animacionFinCompra = () => {
     
     Swal.fire({
         title: 'Cargando...',
+        background: '#080b22',
+        color: 'white',
         allowOutsideClick: false,
         allowEscapeKey: false,
         allowEnterKey: false,
@@ -1023,9 +1054,120 @@ if (contCategorias)
 
 let btnCompra = document.getElementById("btnComprar")
 if (btnCompra)
-    $("#btnComprar").animatedModal({
+{    $("#btnComprar").animatedModal({
         color: '#26223093'
+    })}
+
+/* Simulación enviar mensaje Contacto */
+
+btnContacto = document.querySelector(".btn-enviar")
+const validarCont = () => {
+    let imputCont = document.querySelectorAll(".cont")
+    let contValido
+
+    imputCont.forEach((input) => {
+        contValido = input.value ? true : false
     })
+
+    if (contValido)
+    {
+        Swal.fire({
+            title: 'Cargando...',
+            background: '#080b22',
+            color: 'white',
+            allowOutsideClick: false,
+            allowEscapeKey: false,
+            allowEnterKey: false,
+            timer: 1000,
+            didClose: () => {
+                Swal.fire ({
+                    icon: 'success',
+                    title: '¡Mensaje enviado!',
+                    background: '#080b22',
+                    color: 'white',
+                })
+            }
+        });
+    }
+    else
+    {
+        Swal.fire({
+            title: '¡Debes completar correctamente todos los campos!',
+            icon: 'error',
+            background: '#080b22',
+            color: 'white',
+        })
+    }
+}
+if (btnContacto)
+    btnContacto.addEventListener("click", validarCont)
+
+/* Swipers */
+const swiperNov = new Swiper('.swiper.nov', {
+    loop:true,
+    slidesPerView: 1,
+    spaceBetween: 10,
+    pagination: {
+        el: '.swiper-pagination',
+    },
+    
+    // Navigation arrows
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+        768: {
+            slidesPerView: 3,
+            spaceBetween: 40
+        },
+        1100: {
+            slidesPerView: 4,
+        },
+        1300: {
+            slidesPerView: 5,
+        }
+    }
+
+
+    });
+const swiperArmaPc = new Swiper(".swiper.arma-pc", {
+    slidesPerView: 1,
+    spaceBetween: 90,
+    navigation: {
+        nextEl: ".fa-solid.fa-angles-right",
+        prevEl: ".fa-solid.fa-angles-left"
+    },
+    pagination: {
+        el: ".swiper-pagination",
+    },
+    breakpoints: {
+        770: {
+            spaceBetween: 0,
+            slidesPerView: 2,
+            
+            grid: {
+                rows: 2,
+            },
+        },
+        1040: {
+            spaceBetween: 0,
+            slidesPerView: 3,
+            
+            grid: {
+                rows: 2,
+            },
+        },
+        1455: {
+            spaceBetween: 0,
+            slidesPerView: 4,
+            
+            grid: {
+                rows: 2,
+            },
+        }
+    }
+})
 
 crearListaProd()
 escucharEventos()
