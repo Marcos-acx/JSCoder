@@ -1131,6 +1131,9 @@ const swiperNov = new Swiper('.swiper.nov', {
 
 
     });
+window.addEventListener('load', function() {
+    swiperNov.update();
+});
 const swiperArmaPc = new Swiper(".swiper.arma-pc", {
     slidesPerView: 1,
     spaceBetween: 90,
@@ -1168,6 +1171,9 @@ const swiperArmaPc = new Swiper(".swiper.arma-pc", {
         }
     }
 })
+window.addEventListener('load', function() {
+    swiperArmaPc.update();
+});
 
 crearListaProd()
 escucharEventos()
